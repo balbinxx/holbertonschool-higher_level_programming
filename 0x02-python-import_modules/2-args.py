@@ -9,7 +9,7 @@ if __name__ == "__main__":
         for i in range(x_len):
             if i != 0:
                 print("{:d}: {:s}".format(i, sys.argv[i]))
-    else:  
+    else:
         print("{:d} arguments:".format(x_len - 1))
         for i in range(x_len):
             if i != 0:
