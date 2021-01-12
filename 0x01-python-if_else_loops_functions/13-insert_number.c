@@ -8,43 +8,42 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-    listint_t *nwn;
-    listint_t *x;
+    listint_t *newnode;
+    listint_t *cur; /* cursor used to traverse the list */
 
-    nwn = malloc(sizeof(listint_t));
+    newnode = malloc(sizeof(listint_t));
 
-    if (nwn == NULL)
+    if (newnode == NULL)
         return (NULL);
 
-    nwn->n = number;   
-    nwn->next = NULL;  
+    newnode->n = number;   /* put number into newnode */
+    newnode->next = NULL;  /*prevent garbage value errors */
 
-    x = *head;
+    cur = *head;
 
-    if (x == NULL) 
+    if (cur == NULL) /* check for linked list */
     {
-        *head = nwn;
-        return (nwn);
+        *head = newnode;
+        return (newnode);
     }
 
-    if (x->n >= number) 
+    if (cur->n >= number) /* adds at the beginning of the list */
     {
-        nwn->next = *head;
-        *head = nwn;
-        return (nwn);
+        newnode->next = *head;
+        *head = newnode;
+        return (newnode);
     }
 
-    while (x->next != NULL) 
+    while (cur->next != NULL) /* walk on list and insert node*/
     {
-        if (x->next->n >= number)
+        if (cur->next->n >= number)
         {
             break;
         }
-        x = x->next;
+        cur = cur->next;
     }
 
-    nwn->next = x->next;
-    x->next = nwn;
-    return (nwn);
- 
+    newnode->next = cur->next;
+    cur->next = newnode;
+    return (newnode);
 }
