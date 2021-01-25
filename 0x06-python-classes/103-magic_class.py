@@ -4,6 +4,7 @@ import math
 
 
 class MagicClass:
+    """AO"""
     def __init__(self, radius=0):
         """Init"""
         self.__radius = 0
