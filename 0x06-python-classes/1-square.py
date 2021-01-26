@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Square"""
+
+
 class Square:
     """the attribute (self.__size
     have to have "__" to make it private
