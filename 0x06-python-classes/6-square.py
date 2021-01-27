@@ -5,20 +5,14 @@
 class Square:
     """constructor"""
     def __init__(self, size=0, position=(0, 0)):
-        
         self.size = size
         self.position = position
-        
-        if (type(position) is not tuple):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
-           
+
     @property
     def size(self):
         """getter"""
         return self.__size
-    
+
     @size.setter
     def size(self, aux):
         """setter"""
@@ -33,7 +27,7 @@ class Square:
     def position(self):
         """getter"""
         return self.__position
-    
+
     @position.setter
     def position(self, x):
         """setter"""
@@ -49,7 +43,7 @@ class Square:
     def area(self):
         """area square"""
         return self.__size ** 2 
-        
+
     def my_print(self):
         """print # for each size value
         or " " if [0] is > than 0"""
