@@ -23,4 +23,6 @@ return a sum of a positive number and a negative one:
 
 raise a TypeError if one of the 2 parameters is different from a int or float:
     >>> add_integer(9, "done")
+    Traceback (most recent call last):
+    ...
     TypeError: b must be an integer
