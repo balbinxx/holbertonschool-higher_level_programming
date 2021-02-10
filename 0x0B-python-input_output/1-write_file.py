@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""number of lines"""
+"""writing into a file"""
 
 def write_file(filename="", text=""):
-    """reading from file"""
-    with open(filename, encoding="utf-8") as x:
-        return len(x.readlines())
+    """writing into a file"""
+    with open(filename, mode="w", encoding="utf-8") as x:
+        return x.write(text)
