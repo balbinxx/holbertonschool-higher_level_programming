@@ -2,7 +2,7 @@
 """writing into a file"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """writing into a file"""
     with open(filename, mode="a", encoding="utf-8") as x:
         return x.write(text)
