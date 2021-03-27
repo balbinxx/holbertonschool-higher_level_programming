@@ -9,15 +9,15 @@ import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
-    db = MySQLdb.connect(host='localhost', port=3306,
+    conn = MySQLdb.connect(host='localhost', port=3306,
                          user=argv[1], passwd=argv[2], db=argv[3])
-    c = db.cursor()
+    c = conn.cursor()
     c.execute("SELECT cities.name, FROM cities \
                 INNER JOIN states ON \
                 states.id=cities.states_id \
-                WHERE states.name LIKE BINARY %s \
-                ORDER BY cities.id", (argv[4], ))
+                WHERE states.name = %s \
+                ORDER BY cities.id ASC", (argv[4],))
     row = c.fetchall()
-    print(", ".join(req[0] for req in row))
+    print(", ".join(req[1] for req in row))
     c.close()
-    db.close()
+    conn.close()
